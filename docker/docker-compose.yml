@@ -1,0 +1,12 @@
+version: '3' # Especifica a versão do formato do arquivo do Docker Compose que está sendo utilizado
+
+services: # Define os serviços que serão executados.
+  ansible: # O nome do serviço que será definido
+    build: # Define como construir a imagem Docker para este serviço.
+      context: .
+      dockerfile: Dockerfile
+    volumes: # Define os volumes que serão montados no contêiner.
+      - "C:/temp/ansible:/ansible" # Mapeia o diretório local (onde esta localizado os playbooks e o inventário do Ansible) C:/temp/ansible para o diretório /ansible dentro do contêiner
+    stdin_open: true
+    tty: true
+    command: ansible-playbook -i /ansible/hosts /ansible/ping.yaml # Especifica o comando a ser executado quando o contêiner for iniciado.

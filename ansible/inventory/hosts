@@ -1,0 +1,11 @@
+[windows]
+windows10 ansible_host=10.24.164.117
+[windows:vars]
+ansible_user=TI
+ansible_password=20Network.23
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_scheme=http
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic
+ansible_become_method=ruans

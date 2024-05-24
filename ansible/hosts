@@ -1,0 +1,12 @@
+[windows]
+MGCSBNB1720 ansible_host=10.24.165.182
+MGCSBNB1995 ansible_host=10.24.164.31
+[windows:vars]
+ansible_user=iac
+ansible_password=6a|0$|Q7Rk,t
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_scheme=http
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic
+ansible_become_method=runas

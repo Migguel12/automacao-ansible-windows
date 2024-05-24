@@ -1,0 +1,17 @@
+---
+- name: Criar usuário administrador no Windows
+  hosts: windows
+  tasks:
+    - name: Criar usuário 'iac'
+      ansible.windows.win_user:
+        name: iac
+        password: 'SenhaForte'  
+        description: 'Usuário criado via Ansible'
+        state: present
+
+    - name: Adicionar usuário 'iac' ao grupo Administradores
+      ansible.windows.win_group_membership:
+        name: Administradores
+        members:
+          - iac
+        state: present

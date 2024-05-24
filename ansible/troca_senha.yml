@@ -1,0 +1,14 @@
+---
+- name: troca de senha windowsss
+  hosts: windows
+  become: true
+  gather_facts: true
+  vars:
+    usr_name: 'Meu_Usuario'
+    usr_password: 'Senha123'
+  tasks:
+    - name: troca de senha
+      ansible.windows.win_user:
+        name: "{{ usr_name }}"
+        password: "{{ usr_password }}"
+  become_user: iac  # Usuario ansible criado para executar os playbooks.
