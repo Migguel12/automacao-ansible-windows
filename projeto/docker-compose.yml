@@ -1,0 +1,9 @@
+services:
+  ansible:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "C:/Users/TI/Documentos/projeto:/ansible"
+    stdin_open: true
+    tty: true

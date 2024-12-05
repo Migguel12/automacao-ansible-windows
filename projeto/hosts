@@ -1,0 +1,12 @@
+[windows]
+SPCSCNB0078 ansible_host=192.168.0.2
+SPGRANB6682 ansible_host=192.168.0.3
+[windows:vars]
+ansible_user=iac
+ansible_password=Senha super segura iac
+ansible_port=5985
+ansible_connection=winrm
+ansible_winrm_scheme=http
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic
+ansible_become_method=runas

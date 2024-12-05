@@ -1,0 +1,15 @@
+---
+- name: troca de senha windows
+  hosts: windows
+  become: true
+  gather_facts: true
+  vars:
+    usr_name: 'TI'
+    usr_password: 'Nova senha super segura do TI'
+  tasks:
+    - name: troca de senha
+      ansible.windows.win_user:
+        name: "{{ usr_name }}"
+        password: "{{ usr_password }}"
+      ignore_errors: yes  # Ignorar erros para continuar a execução mesmo se ocorrerem erros durante a troca de senha
+  become_user: iac  # Usuario ansible criado para executar os playbooks.
